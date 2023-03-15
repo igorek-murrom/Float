@@ -1,0 +1,58 @@
+C:\Users\dmina\source\repos\buyo2\buyo2\bin\Debug\buyo2.exe.config
+C:\Users\dmina\source\repos\buyo2\buyo2\bin\Debug\buyo2.exe
+C:\Users\dmina\source\repos\buyo2\buyo2\bin\Debug\buyo2.pdb
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.csproj.AssemblyReference.cache
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.Properties.Resources.resources
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.csproj.GenerateResource.cache
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.csproj.CoreCompileInputs.cache
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.exe
+C:\Users\dmina\source\repos\buyo2\buyo2\obj\Debug\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\bin\Debug\buyo2.exe.config
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\bin\Debug\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\bin\Debug\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.csproj.AssemblyReference.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.Properties.Resources.resources
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.csproj.GenerateResource.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.csproj.CoreCompileInputs.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.Form1.resources
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Debug\buyo2.Dialog1.resources
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\bin\Debug\buyo2.exe.config
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\bin\Debug\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\bin\Debug\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.csproj.AssemblyReference.cache
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.Dialog1.resources
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.Form1.resources
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.Properties.Resources.resources
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.csproj.GenerateResource.cache
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.csproj.CoreCompileInputs.cache
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\buyo2 — копия\buyo2\obj\Debug\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\up\buyo2\bin\Debug\buyo2.exe.config
+C:\Users\dmina\MATE2023\buyo\up\buyo2\bin\Debug\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\up\buyo2\bin\Debug\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.csproj.AssemblyReference.cache
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.Dialog1.resources
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.Form1.resources
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.Properties.Resources.resources
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.csproj.GenerateResource.cache
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.csproj.CoreCompileInputs.cache
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\up\buyo2\obj\Debug\buyo2.pdb
+C:\Users\dmina\buyo\up\buyo2\bin\Debug\buyo2.exe.config
+C:\Users\dmina\buyo\up\buyo2\bin\Debug\buyo2.exe
+C:\Users\dmina\buyo\up\buyo2\bin\Debug\buyo2.pdb
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.csproj.AssemblyReference.cache
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.Dialog1.resources
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.Form1.resources
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.Properties.Resources.resources
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.csproj.GenerateResource.cache
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.csproj.CoreCompileInputs.cache
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.exe
+C:\Users\dmina\buyo\up\buyo2\obj\Debug\buyo2.pdb

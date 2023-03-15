@@ -1,0 +1,11 @@
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\bin\Release\buyo2.exe.config
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\bin\Release\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\bin\Release\buyo2.pdb
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.csproj.AssemblyReference.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.csproj.SuggestedBindingRedirects.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.Form1.resources
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.Properties.Resources.resources
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.csproj.GenerateResource.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.csproj.CoreCompileInputs.cache
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.exe
+C:\Users\dmina\MATE2023\buyo\buyo2\buyo2\obj\Release\buyo2.pdb

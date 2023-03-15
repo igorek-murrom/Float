@@ -1,0 +1,8 @@
+{
+    "port": "COM3",
+    "board": "arduino:avr:nano",
+    "sketch": "buyo.ino",
+    "programmer": "arduino:avrispmkii",
+    "output": "../buyo/build/ArduinoOutput",
+    "configuration": "cpu=atmega328"
+}
