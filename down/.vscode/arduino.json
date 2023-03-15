@@ -1,4 +1,6 @@
 {
     "board": "arduino:avr:uno",
-    "sketch": "down.ino"
+    "sketch": "down.ino",
+    "port": "/dev/ttyUSB0",
+    "programmer": "avrispmkii"
 }

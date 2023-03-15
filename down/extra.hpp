@@ -4,5 +4,3 @@ void Reset() {
     delay(100);
     softReset();
 }
-int time_old;
-#define fixDelay(ms) time_old = millis(); while (millis() - time_old < ms)

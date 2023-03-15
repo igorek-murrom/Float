@@ -1,4 +1,6 @@
-#include "extra.hpp"
+// #include "extra.hpp"
+// int time_old;
+// #define fixDelay(ms) time_old = millis(); while (millis() - time_old < ms);
 class motor {
   public:
     void setPins(byte pwm, byte control1, byte control2) {
@@ -11,20 +13,20 @@ class motor {
       Serial.write("start");
       Serial.write("\n");
       //dive
-      fixDelay(tdive) {
+      // fixDelay(tdive) {
         // Serial.println("test");
         analogWrite(pwm, 250);
         digitalWrite(control1, 0);
         digitalWrite(control2, 1);
-        // delay(tdive);
-      }
+        delay(tdive);
+      // }
       //ascent
-      fixDelay(tascent) {
+      // fixDelay(tascent) {
         analogWrite(pwm, 0);
         digitalWrite(control1, 0);
         digitalWrite(control2, 0);
         delay(tascent);
-      }
+      // }
     }
 
   private:

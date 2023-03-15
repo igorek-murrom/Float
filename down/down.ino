@@ -1,19 +1,16 @@
+
+
 #include "motor.hpp"
 #include "rtc.hpp"
-
+// #include "extra.hpp"
 RTC t; motor m;
 bool status = false;
 
-void init() {
+void setup() {
   t.setNumber("Robocenter");
   m.setPins(7, 6, 5);
   Serial.begin(9600);
-  Wire.begin();
-}
-
-void setup() {
-  init();
-}
+  Wire.begin();}
 
 void loop() {
   if (Serial.available() > 0) {
