@@ -1,6 +1,5 @@
 #include <DS3231.h>
-#include "reset.hpp"
-// #define fixDelay(ms) time_old = millis(); while (millis() - time_old < ms)
+#include "extra.hpp"
 
 DS3231 c1;
 class RTC {

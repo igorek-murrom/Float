@@ -1,6 +1,4 @@
-int time_old;
-#define fixDelay(ms) time_old = millis(); while (millis() - time_old < ms)
-
+#include "extra.hpp"
 class motor {
   public:
     void setPins(byte pwm, byte control1, byte control2) {
