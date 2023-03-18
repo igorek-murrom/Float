@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>671</width>
-    <height>458</height>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,9 @@
       <height>421</height>
      </rect>
     </property>
+    <property name="batchSize">
+     <number>100</number>
+    </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -30,14 +33,38 @@
       <x>0</x>
       <y>0</y>
       <width>231</width>
-      <height>259</height>
+      <height>411</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="Panel">
+     <property name="spacing">
+      <number>15</number>
+     </property>
      <item>
       <widget class="QPushButton" name="StartButton">
        <property name="text">
         <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="dataButton">
+       <property name="text">
+        <string>Data</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetButton">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="settimeButton">
+       <property name="text">
+        <string>Set Time</string>
        </property>
       </widget>
      </item>
@@ -49,6 +76,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="scrollButton">
+       <property name="text">
+        <string>Scroll</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="ConnectButton">
        <property name="text">
         <string>Connect</string>
@@ -56,33 +90,21 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="DisconnectButton">
-       <property name="text">
-        <string>Disconnect</string>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5">
+       <property name="spacing">
+        <number>1</number>
        </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>280</y>
-      <width>183</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBox"/>
+       <item>
+        <widget class="QPushButton" name="updateButton">
+         <property name="text">
+          <string>Update</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>

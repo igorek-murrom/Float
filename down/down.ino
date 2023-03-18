@@ -1,5 +1,3 @@
-
-
 #include "motor.hpp"
 #include "rtc.hpp"
 // #include "extra.hpp"

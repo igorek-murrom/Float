@@ -10,8 +10,7 @@ class motor {
     }
 
     void on(int tdive = 1000, int tascent = 1000) {
-      Serial.write("start");
-      Serial.write("\n");
+      Serial.write("start\n");
       //dive
       // fixDelay(tdive) {
         // Serial.println("test");
