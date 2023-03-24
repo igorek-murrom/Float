@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , m_s(new Serial)
+    , m_tsd(new TimeSetupDialog(this))
 {
     ui->setupUi(this);
     ClearBar();
@@ -12,12 +13,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_s, SIGNAL(showData(QByteArray)), this, SLOT(Add2Bar(QByteArray)));
     connect(m_s, SIGNAL(openOk()), this, SLOT(change_color_connect()));
     connect(m_s, SIGNAL(closeOk()), this, SLOT(change_color_disconnect()));
+    connect(m_tsd, SIGNAL(timeready(QString)), SLOT(writeTimeSet(QString)));
+    connect(m_s, SIGNAL(nonConnected()), this, SLOT(printConErr()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
     m_s->close();
+}
+
+void MainWindow::printConErr() {
+    QMessageBox::warning(this, "Внимание","Сначала подключение порта");
 }
 
 void MainWindow::Add2Bar(const QByteArray data) {
@@ -45,7 +52,6 @@ void MainWindow::updateCombobox(){
         ui->comboBox->setCurrentText(infos[0].portName());
     }
 }
-
 
 //buttons
 void MainWindow::on_ConnectButton_clicked()
@@ -79,7 +85,14 @@ void MainWindow::on_resetButton_clicked()
 
 void MainWindow::on_settimeButton_clicked()
 {
-    m_s->writeData("t121212x");
+    m_tsd->show();
+}
+
+void MainWindow::writeTimeSet(QString data)
+{
+    m_tsd->close();
+    data = "t" + data + "x";
+    m_s->writeData(data.toUtf8());
 }
 
 void MainWindow::on_scrollButton_clicked()
@@ -110,7 +123,7 @@ void MainWindow::on_updateButton_clicked()
 }
 
 
-//colours
+//connect/disconnect
 void MainWindow::change_color_connect() {
     QPalette pal = ui->ConnectButton->palette();
     pal.setColor(QPalette::Button, QColor(Qt::green));
@@ -120,6 +133,7 @@ void MainWindow::change_color_connect() {
 }
 
 void MainWindow::change_color_disconnect() {
+    flagConnect = true;
     QPalette pal = ui->ConnectButton->palette();
     pal.setColor(QPalette::Button, QColor(Qt::white));
     ui->ConnectButton->setAutoFillBackground(true);

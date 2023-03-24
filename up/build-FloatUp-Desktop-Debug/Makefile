@@ -54,13 +54,17 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../FloatUp/main.cpp \
 		../FloatUp/mainwindow.cpp \
-		../FloatUp/serial.cpp moc_mainwindow.cpp \
-		moc_serial.cpp
+		../FloatUp/serial.cpp \
+		../FloatUp/timesetupdialog.cpp moc_mainwindow.cpp \
+		moc_serial.cpp \
+		moc_timesetupdialog.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		serial.o \
+		timesetupdialog.o \
 		moc_mainwindow.o \
-		moc_serial.o
+		moc_serial.o \
+		moc_timesetupdialog.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -143,9 +147,11 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../FloatUp/FloatUp.pro ../FloatUp/mainwindow.h \
-		../FloatUp/serial.h ../FloatUp/main.cpp \
+		../FloatUp/serial.h \
+		../FloatUp/timesetupdialog.h ../FloatUp/main.cpp \
 		../FloatUp/mainwindow.cpp \
-		../FloatUp/serial.cpp
+		../FloatUp/serial.cpp \
+		../FloatUp/timesetupdialog.cpp
 QMAKE_TARGET  = FloatUp
 DESTDIR       = 
 TARGET        = FloatUp
@@ -154,7 +160,7 @@ TARGET        = FloatUp
 first: all
 ####### Build rules
 
-FloatUp: ui_mainwindow.h $(OBJECTS)  
+FloatUp: ui_mainwindow.h ui_timesetupdialog.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../FloatUp/FloatUp.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -337,9 +343,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../FloatUp/mainwindow.h ../FloatUp/serial.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../FloatUp/main.cpp ../FloatUp/mainwindow.cpp ../FloatUp/serial.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../FloatUp/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../FloatUp/mainwindow.h ../FloatUp/serial.h ../FloatUp/timesetupdialog.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../FloatUp/main.cpp ../FloatUp/mainwindow.cpp ../FloatUp/serial.cpp ../FloatUp/timesetupdialog.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../FloatUp/mainwindow.ui ../FloatUp/timesetupdialog.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -371,11 +377,12 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_serial.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_serial.cpp moc_timesetupdialog.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_serial.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_serial.cpp moc_timesetupdialog.cpp
 moc_mainwindow.cpp: ../FloatUp/mainwindow.h \
 		../FloatUp/serial.h \
+		../FloatUp/timesetupdialog.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/igor/code/Float/up/build-FloatUp-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/igor/code/Float/up/FloatUp -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FloatUp/mainwindow.h -o moc_mainwindow.cpp
@@ -385,16 +392,25 @@ moc_serial.cpp: ../FloatUp/serial.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/igor/code/Float/up/build-FloatUp-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/igor/code/Float/up/FloatUp -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FloatUp/serial.h -o moc_serial.cpp
 
+moc_timesetupdialog.cpp: ../FloatUp/timesetupdialog.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/igor/code/Float/up/build-FloatUp-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/igor/code/Float/up/FloatUp -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../FloatUp/timesetupdialog.h -o moc_timesetupdialog.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_mainwindow.h ui_timesetupdialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_mainwindow.h ui_timesetupdialog.h
 ui_mainwindow.h: ../FloatUp/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../FloatUp/mainwindow.ui -o ui_mainwindow.h
+
+ui_timesetupdialog.h: ../FloatUp/timesetupdialog.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../FloatUp/timesetupdialog.ui -o ui_timesetupdialog.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -407,22 +423,31 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 main.o: ../FloatUp/main.cpp ../FloatUp/mainwindow.h \
-		../FloatUp/serial.h
+		../FloatUp/serial.h \
+		../FloatUp/timesetupdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../FloatUp/main.cpp
 
 mainwindow.o: ../FloatUp/mainwindow.cpp ../FloatUp/mainwindow.h \
 		../FloatUp/serial.h \
+		../FloatUp/timesetupdialog.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../FloatUp/mainwindow.cpp
 
 serial.o: ../FloatUp/serial.cpp ../FloatUp/serial.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o serial.o ../FloatUp/serial.cpp
 
+timesetupdialog.o: ../FloatUp/timesetupdialog.cpp ../FloatUp/timesetupdialog.h \
+		ui_timesetupdialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o timesetupdialog.o ../FloatUp/timesetupdialog.cpp
+
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
 moc_serial.o: moc_serial.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_serial.o moc_serial.cpp
+
+moc_timesetupdialog.o: moc_timesetupdialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_timesetupdialog.o moc_timesetupdialog.cpp
 
 ####### Install
 

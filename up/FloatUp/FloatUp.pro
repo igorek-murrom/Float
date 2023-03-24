@@ -18,14 +18,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    serial.cpp
+    serial.cpp \
+    timesetupdialog.cpp
 
 HEADERS += \
     mainwindow.h \
-    serial.h
+    serial.h \
+    timesetupdialog.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    timesetupdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

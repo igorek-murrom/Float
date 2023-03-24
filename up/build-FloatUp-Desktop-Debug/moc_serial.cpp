@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Serial_t {
     QByteArrayData data[17];
-    char stringdata0[151];
+    char stringdata0[152];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,23 +38,22 @@ QT_MOC_LITERAL(3, 17, 4), // "data"
 QT_MOC_LITERAL(4, 22, 6), // "openOk"
 QT_MOC_LITERAL(5, 29, 9), // "openError"
 QT_MOC_LITERAL(6, 39, 7), // "closeOk"
-QT_MOC_LITERAL(7, 47, 8), // "readData"
-QT_MOC_LITERAL(8, 56, 9), // "writeData"
-QT_MOC_LITERAL(9, 66, 4), // "open"
-QT_MOC_LITERAL(10, 71, 4), // "name"
-QT_MOC_LITERAL(11, 76, 9), // "baundRate"
-QT_MOC_LITERAL(12, 86, 5), // "close"
-QT_MOC_LITERAL(13, 92, 11), // "handleError"
-QT_MOC_LITERAL(14, 104, 28), // "QSerialPort::SerialPortError"
-QT_MOC_LITERAL(15, 133, 5), // "error"
-QT_MOC_LITERAL(16, 139, 11) // "checkStatus"
+QT_MOC_LITERAL(7, 47, 12), // "nonConnected"
+QT_MOC_LITERAL(8, 60, 8), // "readData"
+QT_MOC_LITERAL(9, 69, 9), // "writeData"
+QT_MOC_LITERAL(10, 79, 4), // "open"
+QT_MOC_LITERAL(11, 84, 4), // "name"
+QT_MOC_LITERAL(12, 89, 9), // "baundRate"
+QT_MOC_LITERAL(13, 99, 5), // "close"
+QT_MOC_LITERAL(14, 105, 11), // "handleError"
+QT_MOC_LITERAL(15, 117, 28), // "QSerialPort::SerialPortError"
+QT_MOC_LITERAL(16, 146, 5) // "error"
 
     },
     "Serial\0showData\0\0data\0openOk\0openError\0"
-    "closeOk\0readData\0writeData\0open\0name\0"
-    "baundRate\0close\0handleError\0"
-    "QSerialPort::SerialPortError\0error\0"
-    "checkStatus"
+    "closeOk\0nonConnected\0readData\0writeData\0"
+    "open\0name\0baundRate\0close\0handleError\0"
+    "QSerialPort::SerialPortError\0error"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,24 +68,25 @@ static const uint qt_meta_data_Serial[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       4,       // signalCount
+       5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   64,    2, 0x06 /* Public */,
        4,    0,   67,    2, 0x06 /* Public */,
        5,    0,   68,    2, 0x06 /* Public */,
        6,    0,   69,    2, 0x06 /* Public */,
+       7,    0,   70,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    0,   70,    2, 0x0a /* Public */,
-       8,    1,   71,    2, 0x0a /* Public */,
-       9,    2,   74,    2, 0x0a /* Public */,
-      12,    0,   79,    2, 0x0a /* Public */,
-      13,    1,   80,    2, 0x0a /* Public */,
-      16,    0,   83,    2, 0x0a /* Public */,
+       8,    0,   71,    2, 0x0a /* Public */,
+       9,    1,   72,    2, 0x0a /* Public */,
+      10,    2,   75,    2, 0x0a /* Public */,
+      13,    0,   80,    2, 0x0a /* Public */,
+      14,    1,   81,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QByteArray,    3,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -94,10 +94,9 @@ static const uint qt_meta_data_Serial[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QByteArray,    3,
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,   10,   11,
+    QMetaType::Void, QMetaType::QString, QMetaType::Int,   11,   12,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 14,   15,
-    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 15,   16,
 
        0        // eod
 };
@@ -112,12 +111,12 @@ void Serial::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: _t->openOk(); break;
         case 2: _t->openError(); break;
         case 3: _t->closeOk(); break;
-        case 4: _t->readData(); break;
-        case 5: _t->writeData((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
-        case 6: _t->open((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 7: _t->close(); break;
-        case 8: _t->handleError((*reinterpret_cast< QSerialPort::SerialPortError(*)>(_a[1]))); break;
-        case 9: _t->checkStatus(); break;
+        case 4: _t->nonConnected(); break;
+        case 5: _t->readData(); break;
+        case 6: _t->writeData((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
+        case 7: _t->open((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 8: _t->close(); break;
+        case 9: _t->handleError((*reinterpret_cast< QSerialPort::SerialPortError(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -147,6 +146,13 @@ void Serial::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             using _t = void (Serial::*)();
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Serial::closeOk)) {
                 *result = 3;
+                return;
+            }
+        }
+        {
+            using _t = void (Serial::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Serial::nonConnected)) {
+                *result = 4;
                 return;
             }
         }
@@ -216,6 +222,12 @@ void Serial::openError()
 void Serial::closeOk()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
+}
+
+// SIGNAL 4
+void Serial::nonConnected()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

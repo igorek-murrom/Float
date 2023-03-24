@@ -10,7 +10,7 @@ class RTC {
     }
 
     void getTime() {
-      Serial.write("    UTC:  ");
+      Serial.write("UTC:  ");
       print2digits(c1.getHour(h12Flag, pmFlag));
       Serial.write(':');
       print2digits(c1.getMinute());
@@ -23,7 +23,7 @@ class RTC {
     void pushNumber() {
       Serial.write("number of team:  ");
       Serial.write(numberTeam);
-      Serial.write("   ");
+      Serial.write("      ");
     }
     void setr() {
       byte h, m, s;
