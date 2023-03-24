@@ -11,8 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ClearBar();
     updateCombobox();
     connect(m_s, SIGNAL(showData(QByteArray)), this, SLOT(Add2Bar(QByteArray)));
-    connect(m_s, SIGNAL(openOk()), this, SLOT(change_color_connect()));
-    connect(m_s, SIGNAL(closeOk()), this, SLOT(change_color_disconnect()));
+    connect(m_s, SIGNAL(openStatus(bool)), this, SLOT(change_color_connect(bool)));
     connect(m_tsd, SIGNAL(timeready(QString)), SLOT(writeTimeSet(QString)));
     connect(m_s, SIGNAL(nonConnected()), this, SLOT(printConErr()));
 }
@@ -97,19 +96,15 @@ void MainWindow::writeTimeSet(QString data)
 
 void MainWindow::on_scrollButton_clicked()
 {
-    flagScroll = !flagScroll;
     QColor colour;
-    if (flagScroll) {
-        colour = Qt::blue;
-    }
-    else {
-        colour = Qt::white;
-    }
+    if (flagScroll) {colour = Qt::blue;}
+    else {colour = Qt::white;}
     QPalette pal = ui->scrollButton->palette();
     pal.setColor(QPalette::Button, colour);
     ui->scrollButton->setAutoFillBackground(true);
     ui->scrollButton->setPalette(pal);
     ui->scrollButton->update();
+    flagScroll = !flagScroll;
 }
 
 void MainWindow::on_ClearButton_clicked()
@@ -124,18 +119,12 @@ void MainWindow::on_updateButton_clicked()
 
 
 //connect/disconnect
-void MainWindow::change_color_connect() {
+void MainWindow::change_color_connect(bool f) {
+    QColor colour;
+    if (f) {colour = Qt::green;}
+    else {colour = Qt::white;}
     QPalette pal = ui->ConnectButton->palette();
-    pal.setColor(QPalette::Button, QColor(Qt::green));
-    ui->ConnectButton->setAutoFillBackground(true);
-    ui->ConnectButton->setPalette(pal);
-    ui->ConnectButton->update();
-}
-
-void MainWindow::change_color_disconnect() {
-    flagConnect = true;
-    QPalette pal = ui->ConnectButton->palette();
-    pal.setColor(QPalette::Button, QColor(Qt::white));
+    pal.setColor(QPalette::Button, QColor(colour));
     ui->ConnectButton->setAutoFillBackground(true);
     ui->ConnectButton->setPalette(pal);
     ui->ConnectButton->update();

@@ -21,7 +21,7 @@ private slots:
 
 private:
     Ui::TimeSetupDialog *ui;
-
+    QString fixTime(int num);
 };
 
 #endif // TIMESETUPDIALOG_H

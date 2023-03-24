@@ -34,15 +34,14 @@ private slots:
     void on_ClearButton_clicked();
     void on_ConnectButton_clicked();
     void on_updateButton_clicked();
-    void change_color_connect();
-    void change_color_disconnect();
+    void change_color_connect(bool f);
 
 private:
     Ui::MainWindow *ui;
     TimeSetupDialog *m_tsd;
     Serial *m_s = nullptr;
     bool flagData = true;
-    bool flagScroll = false;
+    bool flagScroll = true;
     bool flagConnect = true;
     void updateCombobox();
 };

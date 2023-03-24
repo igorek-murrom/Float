@@ -17,9 +17,10 @@ public:
 
 signals:
     void showData(const QByteArray data);
-    void openOk();
-    void openError();
-    void closeOk();
+    void openStatus(bool f);
+//    void openOk();
+//    void openError();
+//    void closeOk();
     void nonConnected();
 
 public slots:

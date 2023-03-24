@@ -18,12 +18,15 @@ void TimeSetupDialog::on_okButton_clicked()
     int hours = ui->timeEdit->time().hour();
     int minutes = ui->timeEdit->time().minute();
     int seconds = ui->timeEdit->time().second();
-    QString hs, ms, ss;
-    hs = QString::number(hours); ms = QString::number(minutes); ss = QString::number(seconds);
-    if (hours < 10) hs = "0" + hs;
-    if (minutes < 10) ms = "0" + ms;
-    if (seconds < 10) ss = "0" + ss;
-    QString data = hs + ms + ss;
+    QString data = fixTime(hours) + fixTime(minutes) + fixTime(seconds);
+    qDebug() << data;
     emit timeready(data);
 
+}
+
+QString TimeSetupDialog::fixTime(int num) {
+    QString s = "";
+    if (num < 10) s += "0";
+    s += QString::number(num);
+    return s;
 }
