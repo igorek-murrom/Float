@@ -22,7 +22,7 @@ public slots:
     void Add2Bar(const QByteArray data);
     void ClearBar();
     void writeTimeSet(QString data);
-    void printConErr();
+    void printErr(QString error);
 
 
 private slots:
@@ -34,15 +34,15 @@ private slots:
     void on_ClearButton_clicked();
     void on_ConnectButton_clicked();
     void on_updateButton_clicked();
-    void change_color_connect(bool f);
+    void doStatus(bool f);
 
 private:
     Ui::MainWindow *ui;
     TimeSetupDialog *m_tsd;
     Serial *m_s = nullptr;
-    bool flagData = true;
-    bool flagScroll = true;
-    bool flagConnect = true;
+    bool flagData = false;
+    bool flagScroll = false;
+    bool flagConnect = false;
     void updateCombobox();
 };
 #endif // MAINWINDOW_H

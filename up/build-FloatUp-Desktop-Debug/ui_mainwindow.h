@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.8
+** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -47,16 +47,16 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(671, 434);
+        MainWindow->resize(644, 324);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         list = new QListWidget(centralwidget);
         list->setObjectName(QString::fromUtf8("list"));
-        list->setGeometry(QRect(230, -10, 451, 421));
+        list->setGeometry(QRect(230, 0, 451, 301));
         list->setBatchSize(100);
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 0, 231, 411));
+        verticalLayoutWidget->setGeometry(QRect(0, 0, 231, 309));
         Panel = new QVBoxLayout(verticalLayoutWidget);
         Panel->setSpacing(15);
         Panel->setObjectName(QString::fromUtf8("Panel"));
@@ -97,7 +97,7 @@ public:
         Panel->addWidget(ConnectButton);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(1);
+        horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         updateButton = new QPushButton(verticalLayoutWidget);
         updateButton->setObjectName(QString::fromUtf8("updateButton"));
@@ -117,7 +117,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 671, 30));
+        menubar->setGeometry(QRect(0, 0, 644, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -130,15 +130,15 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        StartButton->setText(QApplication::translate("MainWindow", "Start", nullptr));
-        dataButton->setText(QApplication::translate("MainWindow", "Data", nullptr));
-        resetButton->setText(QApplication::translate("MainWindow", "Reset", nullptr));
-        settimeButton->setText(QApplication::translate("MainWindow", "Set Time", nullptr));
-        ClearButton->setText(QApplication::translate("MainWindow", "Clear", nullptr));
-        scrollButton->setText(QApplication::translate("MainWindow", "Scroll", nullptr));
-        ConnectButton->setText(QApplication::translate("MainWindow", "Connect", nullptr));
-        updateButton->setText(QApplication::translate("MainWindow", "Update", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        StartButton->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
+        dataButton->setText(QCoreApplication::translate("MainWindow", "Data", nullptr));
+        resetButton->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
+        settimeButton->setText(QCoreApplication::translate("MainWindow", "Set Time", nullptr));
+        ClearButton->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
+        scrollButton->setText(QCoreApplication::translate("MainWindow", "Scroll", nullptr));
+        ConnectButton->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
+        updateButton->setText(QCoreApplication::translate("MainWindow", "Update", nullptr));
     } // retranslateUi
 
 };

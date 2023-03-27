@@ -1,18 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.8)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.3.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../FloatUp/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.12.8. It"
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.3.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -21,50 +22,47 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[17];
-    char stringdata0[271];
+    const uint offsetsAndSize[36];
+    char stringdata0[262];
 };
-#define QT_MOC_LITERAL(idx, ofs, len) \
-    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs \
-        - idx * sizeof(QByteArrayData)) \
-    )
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
-QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 7), // "Add2Bar"
-QT_MOC_LITERAL(2, 19, 0), // ""
-QT_MOC_LITERAL(3, 20, 4), // "data"
-QT_MOC_LITERAL(4, 25, 8), // "ClearBar"
-QT_MOC_LITERAL(5, 34, 12), // "writeTimeSet"
-QT_MOC_LITERAL(6, 47, 11), // "printConErr"
-QT_MOC_LITERAL(7, 59, 22), // "on_StartButton_clicked"
-QT_MOC_LITERAL(8, 82, 21), // "on_dataButton_clicked"
-QT_MOC_LITERAL(9, 104, 22), // "on_resetButton_clicked"
-QT_MOC_LITERAL(10, 127, 24), // "on_settimeButton_clicked"
-QT_MOC_LITERAL(11, 152, 23), // "on_scrollButton_clicked"
-QT_MOC_LITERAL(12, 176, 22), // "on_ClearButton_clicked"
-QT_MOC_LITERAL(13, 199, 24), // "on_ConnectButton_clicked"
-QT_MOC_LITERAL(14, 224, 23), // "on_updateButton_clicked"
-QT_MOC_LITERAL(15, 248, 20), // "change_color_connect"
-QT_MOC_LITERAL(16, 269, 1) // "f"
+QT_MOC_LITERAL(0, 10), // "MainWindow"
+QT_MOC_LITERAL(11, 7), // "Add2Bar"
+QT_MOC_LITERAL(19, 0), // ""
+QT_MOC_LITERAL(20, 4), // "data"
+QT_MOC_LITERAL(25, 8), // "ClearBar"
+QT_MOC_LITERAL(34, 12), // "writeTimeSet"
+QT_MOC_LITERAL(47, 8), // "printErr"
+QT_MOC_LITERAL(56, 5), // "error"
+QT_MOC_LITERAL(62, 22), // "on_StartButton_clicked"
+QT_MOC_LITERAL(85, 21), // "on_dataButton_clicked"
+QT_MOC_LITERAL(107, 22), // "on_resetButton_clicked"
+QT_MOC_LITERAL(130, 24), // "on_settimeButton_clicked"
+QT_MOC_LITERAL(155, 23), // "on_scrollButton_clicked"
+QT_MOC_LITERAL(179, 22), // "on_ClearButton_clicked"
+QT_MOC_LITERAL(202, 24), // "on_ConnectButton_clicked"
+QT_MOC_LITERAL(227, 23), // "on_updateButton_clicked"
+QT_MOC_LITERAL(251, 8), // "doStatus"
+QT_MOC_LITERAL(260, 1) // "f"
 
     },
     "MainWindow\0Add2Bar\0\0data\0ClearBar\0"
-    "writeTimeSet\0printConErr\0"
+    "writeTimeSet\0printErr\0error\0"
     "on_StartButton_clicked\0on_dataButton_clicked\0"
     "on_resetButton_clicked\0on_settimeButton_clicked\0"
     "on_scrollButton_clicked\0on_ClearButton_clicked\0"
     "on_ConnectButton_clicked\0"
-    "on_updateButton_clicked\0change_color_connect\0"
-    "f"
+    "on_updateButton_clicked\0doStatus\0f"
 };
 #undef QT_MOC_LITERAL
 
 static const uint qt_meta_data_MainWindow[] = {
 
  // content:
-       8,       // revision
+      10,       // revision
        0,       // classname
        0,    0, // classinfo
       13,   14, // methods
@@ -74,25 +72,26 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // flags
        0,       // signalCount
 
- // slots: name, argc, parameters, tag, flags
-       1,    1,   79,    2, 0x0a /* Public */,
-       4,    0,   82,    2, 0x0a /* Public */,
-       5,    1,   83,    2, 0x0a /* Public */,
-       6,    0,   86,    2, 0x0a /* Public */,
-       7,    0,   87,    2, 0x08 /* Private */,
-       8,    0,   88,    2, 0x08 /* Private */,
-       9,    0,   89,    2, 0x08 /* Private */,
-      10,    0,   90,    2, 0x08 /* Private */,
-      11,    0,   91,    2, 0x08 /* Private */,
-      12,    0,   92,    2, 0x08 /* Private */,
-      13,    0,   93,    2, 0x08 /* Private */,
-      14,    0,   94,    2, 0x08 /* Private */,
-      15,    1,   95,    2, 0x08 /* Private */,
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   92,    2, 0x0a,    1 /* Public */,
+       4,    0,   95,    2, 0x0a,    3 /* Public */,
+       5,    1,   96,    2, 0x0a,    4 /* Public */,
+       6,    1,   99,    2, 0x0a,    6 /* Public */,
+       8,    0,  102,    2, 0x08,    8 /* Private */,
+       9,    0,  103,    2, 0x08,    9 /* Private */,
+      10,    0,  104,    2, 0x08,   10 /* Private */,
+      11,    0,  105,    2, 0x08,   11 /* Private */,
+      12,    0,  106,    2, 0x08,   12 /* Private */,
+      13,    0,  107,    2, 0x08,   13 /* Private */,
+      14,    0,  108,    2, 0x08,   14 /* Private */,
+      15,    0,  109,    2, 0x08,   15 /* Private */,
+      16,    1,  110,    2, 0x08,   16 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QByteArray,    3,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -101,8 +100,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   16,
+    QMetaType::Void, QMetaType::Bool,   17,
 
        0        // eod
 };
@@ -111,12 +109,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<MainWindow *>(_o);
-        Q_UNUSED(_t)
+        (void)_t;
         switch (_id) {
-        case 0: _t->Add2Bar((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
+        case 0: _t->Add2Bar((*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[1]))); break;
         case 1: _t->ClearBar(); break;
-        case 2: _t->writeTimeSet((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 3: _t->printConErr(); break;
+        case 2: _t->writeTimeSet((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->printErr((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 4: _t->on_StartButton_clicked(); break;
         case 5: _t->on_dataButton_clicked(); break;
         case 6: _t->on_resetButton_clicked(); break;
@@ -125,18 +123,24 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 9: _t->on_ClearButton_clicked(); break;
         case 10: _t->on_ConnectButton_clicked(); break;
         case 11: _t->on_updateButton_clicked(); break;
-        case 12: _t->change_color_connect((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 12: _t->doStatus((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         default: ;
         }
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {
-    &QMainWindow::staticMetaObject,
-    qt_meta_stringdata_MainWindow.data,
+const QMetaObject MainWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
+    qt_meta_stringdata_MainWindow.offsetsAndSize,
     qt_meta_data_MainWindow,
     qt_static_metacall,
     nullptr,
+qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
+, QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QByteArray, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>
+
+
+>,
     nullptr
 } };
 
@@ -165,7 +169,7 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 13)
-            *reinterpret_cast<int*>(_a[0]) = -1;
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 13;
     }
     return _id;

@@ -4,7 +4,7 @@ Serial::Serial(QObject *parent) : QObject(parent)
   , m_serial(new QSerialPort(this))
 {
     connect(m_serial, SIGNAL(readyRead()), this, SLOT(readData()));
-    connect(m_serial, SIGNAL(error(QSerialPort::SerialPortError)), this,
+    connect(m_serial, SIGNAL(errorOccurred(QSerialPort::SerialPortError)), this,
                 SLOT(handleError(QSerialPort::SerialPortError)));
 }
 
@@ -22,14 +22,15 @@ void Serial::readData()
             emit showData(data);
         }
     }
-    else {emit nonConnected();}
+    else {emit sendError("Сначало подключение порта");}
 }
 
 void Serial::writeData(const QByteArray data) {
+    qDebug() << data;
     if (m_serial->isOpen()) {
         m_serial->write(data);
     }
-    else {emit nonConnected();}
+    else {emit sendError("Сначало подключение порта");}
 }
 
 void Serial::open(QString name, int baundRate=9600) {

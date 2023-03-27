@@ -21,7 +21,7 @@ signals:
 //    void openOk();
 //    void openError();
 //    void closeOk();
-    void nonConnected();
+    void sendError(QString);
 
 public slots:
     void readData();

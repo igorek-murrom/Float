@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file>res/mainicon.png</file>
+        <file>res/clockicon.png</file>
+    </qresource>
+</RCC>

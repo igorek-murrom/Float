@@ -6,20 +6,19 @@ TimeSetupDialog::TimeSetupDialog(QWidget *parent) :
     ui(new Ui::TimeSetupDialog)
 {
     ui->setupUi(this);
+    setWindowTitle("Set Time");
 }
 
-TimeSetupDialog::~TimeSetupDialog()
-{
+TimeSetupDialog::~TimeSetupDialog() {
     delete ui;
 }
 
-void TimeSetupDialog::on_okButton_clicked()
-{
+void TimeSetupDialog::on_okButton_clicked() {
     int hours = ui->timeEdit->time().hour();
     int minutes = ui->timeEdit->time().minute();
     int seconds = ui->timeEdit->time().second();
     QString data = fixTime(hours) + fixTime(minutes) + fixTime(seconds);
-    qDebug() << data;
+//    qDebug() << data;
     emit timeready(data);
 
 }

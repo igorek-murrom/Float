@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'timesetupdialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.8
+** Created by: Qt User Interface Compiler version 6.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -43,6 +43,7 @@ public:
         QFont font;
         font.setPointSize(60);
         timeEdit->setFont(font);
+        timeEdit->setDateTime(QDateTime(QDate(2000, 1, 1), QTime(0, 0, 0)));
 
         verticalLayout->addWidget(timeEdit);
 
@@ -60,9 +61,9 @@ public:
 
     void retranslateUi(QDialog *TimeSetupDialog)
     {
-        TimeSetupDialog->setWindowTitle(QApplication::translate("TimeSetupDialog", "Dialog", nullptr));
-        timeEdit->setDisplayFormat(QApplication::translate("TimeSetupDialog", "HH:mm:ss", nullptr));
-        okButton->setText(QApplication::translate("TimeSetupDialog", "Okay", nullptr));
+        TimeSetupDialog->setWindowTitle(QCoreApplication::translate("TimeSetupDialog", "Dialog", nullptr));
+        timeEdit->setDisplayFormat(QCoreApplication::translate("TimeSetupDialog", "HH:mm:ss", nullptr));
+        okButton->setText(QCoreApplication::translate("TimeSetupDialog", "Okay", nullptr));
     } // retranslateUi
 
 };

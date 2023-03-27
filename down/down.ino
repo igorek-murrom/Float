@@ -8,7 +8,8 @@ void setup() {
   t.setNumber("Robocenter");
   m.setPins(7, 6, 5);
   Serial.begin(9600);
-  Wire.begin();}
+  Wire.begin();
+}
 
 void loop() {
   if (Serial.available() > 0) {

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
-    <height>434</height>
+    <width>644</width>
+    <height>324</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>-10</y>
+      <y>0</y>
       <width>451</width>
-      <height>421</height>
+      <height>301</height>
      </rect>
     </property>
     <property name="batchSize">
@@ -33,7 +33,7 @@
       <x>0</x>
       <y>0</y>
       <width>231</width>
-      <height>411</height>
+      <height>309</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="Panel">
@@ -92,7 +92,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5">
        <property name="spacing">
-        <number>1</number>
+        <number>0</number>
        </property>
        <item>
         <widget class="QPushButton" name="updateButton">
@@ -114,8 +114,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>671</width>
-     <height>30</height>
+     <width>644</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

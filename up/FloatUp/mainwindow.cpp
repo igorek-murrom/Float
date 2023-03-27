@@ -8,12 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
     , m_tsd(new TimeSetupDialog(this))
 {
     ui->setupUi(this);
-    ClearBar();
+    setWindowTitle("Float MATE");
     updateCombobox();
     connect(m_s, SIGNAL(showData(QByteArray)), this, SLOT(Add2Bar(QByteArray)));
-    connect(m_s, SIGNAL(openStatus(bool)), this, SLOT(change_color_connect(bool)));
+    connect(m_s, SIGNAL(openStatus(bool)), this, SLOT(doStatus(bool)));
     connect(m_tsd, SIGNAL(timeready(QString)), SLOT(writeTimeSet(QString)));
-    connect(m_s, SIGNAL(nonConnected()), this, SLOT(printConErr()));
+    connect(m_s, SIGNAL(sendError(QString)), this, SLOT(printErr(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -22,8 +22,8 @@ MainWindow::~MainWindow()
     m_s->close();
 }
 
-void MainWindow::printConErr() {
-    QMessageBox::warning(this, "Внимание","Сначала подключение порта");
+void MainWindow::printErr(QString error = "Сначало подключение порта") {
+    QMessageBox::warning(this, "Внимание", error);
 }
 
 void MainWindow::Add2Bar(const QByteArray data) {
@@ -38,7 +38,7 @@ void MainWindow::ClearBar() {
     ui->list->clear();
 }
 
-void MainWindow::updateCombobox(){
+void MainWindow::updateCombobox() {
     ui->comboBox->clearEditText();
     ui->comboBox->clear();
     const auto infos = QSerialPortInfo::availablePorts();
@@ -53,51 +53,44 @@ void MainWindow::updateCombobox(){
 }
 
 //buttons
-void MainWindow::on_ConnectButton_clicked()
-{
-    if (flagConnect) {
+void MainWindow::on_ConnectButton_clicked() {
+    if (!flagConnect) {
         QString name = ui->comboBox->currentText();
-        m_s->open(name, 9600);
+        if (name != "") m_s->open(name, 9600);
+        else printErr("сначало выбор порта");
     }
     else {
         m_s->close();
     }
-    flagConnect = !flagConnect;
 }
 
-void MainWindow::on_StartButton_clicked()
-{
+void MainWindow::on_StartButton_clicked() {
     m_s->writeData("s");
 }
 
-void MainWindow::on_dataButton_clicked()
-{
-    if (flagData) m_s->writeData("d");
+void MainWindow::on_dataButton_clicked() {
+    if (!flagData) m_s->writeData("d");
     else m_s->writeData("c");
-    flagData = !flagData;
+    if (flagConnect) flagData = !flagData;
 }
 
-void MainWindow::on_resetButton_clicked()
-{
+void MainWindow::on_resetButton_clicked() {
     m_s->writeData("r");
 }
 
-void MainWindow::on_settimeButton_clicked()
-{
+void MainWindow::on_settimeButton_clicked() {
     m_tsd->show();
 }
 
-void MainWindow::writeTimeSet(QString data)
-{
+void MainWindow::writeTimeSet(QString data) {
     m_tsd->close();
     data = "t" + data + "x";
     m_s->writeData(data.toUtf8());
 }
 
-void MainWindow::on_scrollButton_clicked()
-{
+void MainWindow::on_scrollButton_clicked() {
     QColor colour;
-    if (flagScroll) {colour = Qt::blue;}
+    if (!flagScroll) {colour = Qt::blue;}
     else {colour = Qt::white;}
     QPalette pal = ui->scrollButton->palette();
     pal.setColor(QPalette::Button, colour);
@@ -107,19 +100,17 @@ void MainWindow::on_scrollButton_clicked()
     flagScroll = !flagScroll;
 }
 
-void MainWindow::on_ClearButton_clicked()
-{
+void MainWindow::on_ClearButton_clicked() {
     ClearBar();
 }
 
-void MainWindow::on_updateButton_clicked()
-{
+void MainWindow::on_updateButton_clicked() {
     updateCombobox();
 }
 
-
 //connect/disconnect
-void MainWindow::change_color_connect(bool f) {
+void MainWindow::doStatus(bool f) {
+    flagConnect = f;
     QColor colour;
     if (f) {colour = Qt::green;}
     else {colour = Qt::white;}

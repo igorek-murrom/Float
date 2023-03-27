@@ -40,7 +40,8 @@ class RTC {
           if (inChar == 'r') Reset();
         }
       }
-      
+      for (auto k : inString) Serial.write(k);
+      Serial.write(" ");
       // now hour
       temp1 = (byte)inString[0] - 48;
       temp2 = (byte)inString[1] - 48;
