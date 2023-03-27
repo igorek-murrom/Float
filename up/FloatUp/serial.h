@@ -25,7 +25,7 @@ signals:
 
 public slots:
     void readData();
-    void writeData(const QByteArray data);
+    void writeData(QByteArray data);
     void open(QString name, int baundRate);
     void close();
     void handleError(QSerialPort::SerialPortError error);

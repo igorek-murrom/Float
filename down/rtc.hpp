@@ -1,7 +1,6 @@
 #include <DS3231.h>
 #include "extra.hpp"
-// int time_old;
-// #define fixDelay(ms) time_old = millis(); while (millis() - time_old < ms);
+
 DS3231 c1;
 class RTC {
   public:
@@ -25,34 +24,18 @@ class RTC {
       Serial.write(numberTeam);
       Serial.write("      ");
     }
-    void setr() {
+    void setr(String data) {
       byte h, m, s;
-      char inChar;
       byte temp1, temp2;
-      char inString[7];
 
-      size_t j = 0;
-      while (inChar != 'x') {
-        if (Serial.available() > 0) {
-          inChar = Serial.read();
-          inString[j] = inChar;
-          j++;
-          if (inChar == 'r') Reset();
-        }
-      }
-      for (auto k : inString) Serial.write(k);
-      Serial.write(" ");
-      // now hour
-      temp1 = (byte)inString[0] - 48;
-      temp2 = (byte)inString[1] - 48;
+      temp1 = (byte)data[1] - 48;
+      temp2 = (byte)data[2] - 48;
       h = temp1 * 10 + temp2;
-      // now minute
-      temp1 = (byte)inString[2] - 48;
-      temp2 = (byte)inString[3] - 48;
+      temp1 = (byte)data[3] - 48;
+      temp2 = (byte)data[4] - 48;
       m = temp1 * 10 + temp2;
-      // now second
-      temp1 = (byte)inString[4] - 48;
-      temp2 = (byte)inString[5] - 48;
+      temp1 = (byte)data[5] - 48;
+      temp2 = (byte)data[6] - 48;
       s = temp1 * 10 + temp2;
 
       Serial.write("Set RTC:  ");

@@ -25,9 +25,10 @@ void Serial::readData()
     else {emit sendError("Сначало подключение порта");}
 }
 
-void Serial::writeData(const QByteArray data) {
+void Serial::writeData(QByteArray data) {
     qDebug() << data;
     if (m_serial->isOpen()) {
+        data.push_back('\n');
         m_serial->write(data);
     }
     else {emit sendError("Сначало подключение порта");}
