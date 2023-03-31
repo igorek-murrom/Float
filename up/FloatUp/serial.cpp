@@ -19,6 +19,7 @@ void Serial::readData()
     if (m_serial->isOpen()) {
         if (m_serial->canReadLine()) {
             const QByteArray data = m_serial->readLine();
+            m_serial->clear();
             emit showData(data);
         }
     }
@@ -26,10 +27,10 @@ void Serial::readData()
 }
 
 void Serial::writeData(QByteArray data) {
-    qDebug() << data;
     if (m_serial->isOpen()) {
         data.push_back('\n');
-        m_serial->write(data);
+        int q = m_serial->write(data);
+        qDebug() << data << " " << q;
     }
     else {emit sendError("Сначало подключение порта");}
 }
@@ -39,6 +40,7 @@ void Serial::open(QString name, int baundRate=9600) {
     m_serial->setBaudRate(baundRate);
 
     if (m_serial->open(QIODevice::ReadWrite)) {
+        m_serial->write("ok\n");
         emit openStatus(true);
     }
     else {

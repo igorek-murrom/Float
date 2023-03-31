@@ -2,5 +2,5 @@
     "sketch": "down.ino",
     "board": "arduino:avr:uno",
     "programmer": "avrispmkii",
-    "port": "/dev/ttyUSB0"
+    "port": "/dev/ttyUSB1"
 }

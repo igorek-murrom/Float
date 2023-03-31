@@ -4,8 +4,9 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , m_s(new Serial)
     , m_tsd(new TimeSetupDialog(this))
+    , m_sd(new SpecificDialog(this))
+    , m_s(new Serial)
 {
     ui->setupUi(this);
     setWindowTitle("Float MATE");
@@ -13,16 +14,16 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_s, SIGNAL(showData(QByteArray)), this, SLOT(Add2Bar(QByteArray)));
     connect(m_s, SIGNAL(openStatus(bool)), this, SLOT(doStatus(bool)));
     connect(m_tsd, SIGNAL(timeready(QString)), SLOT(writeTimeSet(QString)));
+    connect(m_sd, SIGNAL(specificready(QString)), SLOT(writeSpecific(QString)));
     connect(m_s, SIGNAL(sendError(QString)), this, SLOT(printErr(QString)));
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
     m_s->close();
 }
 
-void MainWindow::printErr(QString error = "Сначало подключение порта") {
+void MainWindow::printErr(QString error) {
     QMessageBox::warning(this, "Внимание", error);
 }
 
@@ -54,10 +55,12 @@ void MainWindow::updateCombobox() {
 
 //buttons
 void MainWindow::on_ConnectButton_clicked() {
+    qDebug() << "test";
     if (!flagConnect) {
         QString name = ui->comboBox->currentText();
         if (name != "") m_s->open(name, 9600);
         else printErr("сначало выбор порта");
+//        if (flagConnect) m_s->writeData("ok\n");
     }
     else {
         m_s->close();
@@ -65,26 +68,35 @@ void MainWindow::on_ConnectButton_clicked() {
 }
 
 void MainWindow::on_StartButton_clicked() {
-    m_s->writeData("s");
+    m_s->writeData("str");
 }
 
 void MainWindow::on_dataButton_clicked() {
-    if (!flagData) m_s->writeData("d");
-    else m_s->writeData("c");
+    if (!flagData) m_s->writeData("odt");
+    else m_s->writeData("cdt");
     if (flagConnect) flagData = !flagData;
 }
 
 void MainWindow::on_resetButton_clicked() {
-    m_s->writeData("r");
+    m_s->writeData("rst");
 }
 
 void MainWindow::on_settimeButton_clicked() {
     m_tsd->show();
 }
 
+void MainWindow::on_specificButton_clicked() {
+    m_sd->show();
+}
+
 void MainWindow::writeTimeSet(QString data) {
     m_tsd->close();
     data = "t" + data + "x";
+    m_s->writeData(data.toUtf8());
+}
+
+void MainWindow::writeSpecific(QString data) {
+    m_sd->close();
     m_s->writeData(data.toUtf8());
 }
 

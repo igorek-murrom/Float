@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "serial.h"
 #include "timesetupdialog.h"
+#include "specificdialog.h"
 #include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,7 @@ public slots:
     void Add2Bar(const QByteArray data);
     void ClearBar();
     void writeTimeSet(QString data);
+    void writeSpecific(QString data);
     void printErr(QString error);
 
 
@@ -36,9 +38,12 @@ private slots:
     void on_updateButton_clicked();
     void doStatus(bool f);
 
+    void on_specificButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     TimeSetupDialog *m_tsd;
+    SpecificDialog *m_sd;
     Serial *m_s = nullptr;
     bool flagData = false;
     bool flagScroll = false;

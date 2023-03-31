@@ -10,11 +10,14 @@ class RTC {
 
     void getTime() {
       Serial.write("UTC:  ");
-      print2digits(c1.getHour(h12Flag, pmFlag));
+      Serial.print(c1.getHour(h12Flag, pmFlag));
+      // print2digits(c1.getHour(h12Flag, pmFlag));
       Serial.write(':');
-      print2digits(c1.getMinute());
+      Serial.print(c1.getMinute());
+      // print2digits(c1.getMinute());
       Serial.write(':');
-      print2digits(c1.getSecond());
+      Serial.print(c1.getSecond());
+      // print2digits(c1.getSecond());
       Serial.write("\n");
       delay(1000);
     }

@@ -38,7 +38,7 @@
     </property>
     <layout class="QVBoxLayout" name="Panel">
      <property name="spacing">
-      <number>15</number>
+      <number>8</number>
      </property>
      <item>
       <widget class="QPushButton" name="StartButton">
@@ -65,6 +65,13 @@
       <widget class="QPushButton" name="settimeButton">
        <property name="text">
         <string>Set Time</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="specificButton">
+       <property name="text">
+        <string>Specific</string>
        </property>
       </widget>
      </item>

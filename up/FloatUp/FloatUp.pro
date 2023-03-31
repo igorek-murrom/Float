@@ -19,15 +19,18 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     serial.cpp \
+    specificdialog.cpp \
     timesetupdialog.cpp
 
 HEADERS += \
     mainwindow.h \
     serial.h \
+    specificdialog.h \
     timesetupdialog.h
 
 FORMS += \
     mainwindow.ui \
+    specificdialog.ui \
     timesetupdialog.ui
 
 # Default rules for deployment.
