@@ -55,12 +55,11 @@ void MainWindow::updateCombobox() {
 
 //buttons
 void MainWindow::on_ConnectButton_clicked() {
-    qDebug() << "test";
     if (!flagConnect) {
         QString name = ui->comboBox->currentText();
         if (name != "") m_s->open(name, 9600);
         else printErr("сначало выбор порта");
-//        if (flagConnect) m_s->writeData("ok\n");
+        if (flagConnect) m_s->writeData("ok\n");
     }
     else {
         m_s->close();
