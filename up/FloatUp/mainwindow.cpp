@@ -122,6 +122,7 @@ void MainWindow::on_updateButton_clicked() {
 //connect/disconnect
 void MainWindow::doStatus(bool f) {
     flagConnect = f;
+    flagData = !f;
     QColor colour;
     if (f) {colour = Qt::green;}
     else {colour = Qt::white;}
