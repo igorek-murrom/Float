@@ -1,6 +1,7 @@
 {
     "sketch": "downThreads.ino",
-    "board": "arduino:avr:uno",
+    "board": "arduino:avr:nano",
     "programmer": "avrispmkii",
-    "port": "/dev/ttyACM0"
+    "port": "/dev/ttyUSB0",
+    "configuration": "cpu=atmega328old"
 }

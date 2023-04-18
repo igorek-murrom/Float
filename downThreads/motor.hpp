@@ -25,7 +25,6 @@ class motor {
 
     void debug(byte pin, int mode = 0) {
       /*  0 - analog    1 - digital*/
-      
       if (mode == 0) Serial.write(String(analogRead(pin)).c_str());
       else Serial.write(String(digitalRead(pin)).c_str());
       Serial.write("\n");
