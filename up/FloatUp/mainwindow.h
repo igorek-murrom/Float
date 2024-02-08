@@ -36,8 +36,8 @@ private slots:
     void on_ClearButton_clicked();
     void on_ConnectButton_clicked();
     void on_updateButton_clicked();
-    void doStatus(bool f);
 
+    void doStatus();
     void on_specificButton_clicked();
 
 private:
@@ -47,7 +47,6 @@ private:
     Serial *m_s = nullptr;
     bool flagData = false;
     bool flagScroll = false;
-    bool flagConnect = false;
     void updateCombobox();
 };
 #endif // MAINWINDOW_H

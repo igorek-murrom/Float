@@ -14,13 +14,11 @@ class Serial : public QObject
     Q_OBJECT
 public:
     explicit Serial(QObject *parent = nullptr);
+    bool status = false;
 
 signals:
     void showData(const QByteArray data);
-    void openStatus(bool f);
-//    void openOk();
-//    void openError();
-//    void closeOk();
+    void changeStatus();
     void sendError(QString);
 
 public slots:
@@ -30,10 +28,13 @@ public slots:
     void close();
     void handleError(QSerialPort::SerialPortError error);
 
+private slots:
+    void loop();
+
 private:
     QSerialPort *m_serial = nullptr;
-    QTimer * timerCheck;
-    QProcess proc;
+    QTimer * m_timer;
+    bool old_status;
 };
 
 #endif // SERIAL_H

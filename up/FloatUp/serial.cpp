@@ -2,16 +2,24 @@
 
 Serial::Serial(QObject *parent) : QObject(parent)
   , m_serial(new QSerialPort(this))
+  , m_timer(new QTimer())
 {
+    old_status = status;
     connect(m_serial, SIGNAL(readyRead()), this, SLOT(readData()));
     connect(m_serial, SIGNAL(errorOccurred(QSerialPort::SerialPortError)), this,
                 SLOT(handleError(QSerialPort::SerialPortError)));
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(loop()));
+    m_timer->start(20);
+}
+
+void Serial::loop() {
+    if (status != old_status) emit changeStatus();
+    old_status = status;
 }
 
 void Serial::handleError(QSerialPort::SerialPortError error) {
     qDebug() << error;
     close();
-    emit openStatus(false);
 }
 
 void Serial::readData()
@@ -41,17 +49,17 @@ void Serial::open(QString name, int baundRate=9600) {
 
     if (m_serial->open(QIODevice::ReadWrite)) {
         m_serial->write("ok\n");
-        emit openStatus(true);
+        status = true;
     }
     else {
         m_serial->close();
-        emit openStatus(false);
+        status = false;
     }
 }
 
 void Serial::close() {
     if (m_serial->isOpen()) {
         m_serial->close();
-        emit openStatus(false);
+        status = false;
     }
 }

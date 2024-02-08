@@ -6,6 +6,7 @@ TimeSetupDialog::TimeSetupDialog(QWidget *parent) :
     ui(new Ui::TimeSetupDialog)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/res/clockicon.png"));
     setWindowTitle("Set Time");
 }
 
@@ -18,7 +19,6 @@ void TimeSetupDialog::on_okButton_clicked() {
     int minutes = ui->timeEdit->time().minute();
     int seconds = ui->timeEdit->time().second();
     QString data = fixTime(hours) + fixTime(minutes) + fixTime(seconds);
-//    qDebug() << data;
     emit timeready(data);
 
 }

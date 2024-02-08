@@ -9,10 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
     , m_s(new Serial)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/res/mainicon.png"));
     setWindowTitle("Float MATE");
     updateCombobox();
     connect(m_s, SIGNAL(showData(QByteArray)), this, SLOT(Add2Bar(QByteArray)));
-    connect(m_s, SIGNAL(openStatus(bool)), this, SLOT(doStatus(bool)));
+    connect(m_s, SIGNAL(changeStatus()), this, SLOT(doStatus()));
     connect(m_tsd, SIGNAL(timeready(QString)), SLOT(writeTimeSet(QString)));
     connect(m_sd, SIGNAL(specificready(QString)), SLOT(writeSpecific(QString)));
     connect(m_s, SIGNAL(sendError(QString)), this, SLOT(printErr(QString)));
@@ -55,11 +56,10 @@ void MainWindow::updateCombobox() {
 
 //buttons
 void MainWindow::on_ConnectButton_clicked() {
-    if (!flagConnect) {
+    if (!m_s->status) {
         QString name = ui->comboBox->currentText();
         if (name != "") m_s->open(name, 9600);
         else printErr("сначало выбор порта");
-        if (flagConnect) m_s->writeData("ok\n");
     }
     else {
         m_s->close();
@@ -73,7 +73,7 @@ void MainWindow::on_StartButton_clicked() {
 void MainWindow::on_dataButton_clicked() {
     if (!flagData) m_s->writeData("odt");
     else m_s->writeData("cdt");
-    if (flagConnect) flagData = !flagData;
+    if (m_s->status) flagData = !flagData;
 }
 
 void MainWindow::on_resetButton_clicked() {
@@ -120,11 +120,11 @@ void MainWindow::on_updateButton_clicked() {
 }
 
 //connect/disconnect
-void MainWindow::doStatus(bool f) {
-    flagConnect = f;
-    flagData = !f;
+void MainWindow::doStatus() {
+    if (!m_s->status and flagData) flagData = false;
+
     QColor colour;
-    if (f) {colour = Qt::green;}
+    if (m_s->status) {colour = Qt::green;}
     else {colour = Qt::white;}
     QPalette pal = ui->ConnectButton->palette();
     pal.setColor(QPalette::Button, QColor(colour));
